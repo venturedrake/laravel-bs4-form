@@ -813,7 +813,7 @@ class BootstrapForm
      */
     protected function getFormGroupOptions($name = null, array $options = [])
     {
-        $class = 'form-group row';
+        $class = 'form-group';
 
         if ($name) {
             $class .= ' ' . $this->getFieldErrorClass($name);
