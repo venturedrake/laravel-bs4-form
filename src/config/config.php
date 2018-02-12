@@ -1,6 +1,6 @@
 <?php
 
-use Watson\BootstrapForm\Type;
+use RealRipley\BootstrapForm\Type;
 
 return [
 

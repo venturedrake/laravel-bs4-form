@@ -1,6 +1,6 @@
 <?php
 
-namespace Watson\BootstrapForm;
+namespace RealRipley\BootstrapForm;
 
 use Collective\Html\FormBuilder;
 use Collective\Html\HtmlBuilder;
