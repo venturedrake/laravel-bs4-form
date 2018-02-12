@@ -1,12 +1,12 @@
 {
-    "name": "watson/bootstrap-form",
+    "name": "realripley00/bootstrap-form",
     "description": "Laravel 5 form wrappers for Bootstrap 3.",
     "keywords": ["laravel", "form", "bootstrap"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Dwight Watson",
-            "email": "dwightwatson@me.com"
+            "name": "RealRipley00",
+            "email": "realripley00@gmail.com"
         }
     ],
     "require": {
@@ -22,16 +22,16 @@
     },
     "autoload": {
         "psr-4": {
-            "Watson\\BootstrapForm\\": "src/"
+            "RealRipley\\BootstrapForm\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Watson\\BootstrapForm\\BootstrapFormServiceProvider"
+                "RealRipley\\BootstrapForm\\BootstrapFormServiceProvider"
             ],
             "aliases": {
-                "BootForm": "Watson\\BootstrapForm\\Facades\\BootstrapForm"
+                "BootForm": "RealRipley\\BootstrapForm\\Facades\\BootstrapForm"
             }
         }
     },

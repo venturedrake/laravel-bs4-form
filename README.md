@@ -1,14 +1,14 @@
 BootstrapForm, forms for Laravel 5
 ==================================
 
-[![Circle CI](https://circleci.com/gh/dwightwatson/bootstrap-form/tree/master.svg?style=shield)](https://circleci.com/gh/dwightwatson/bootstrap-form/tree/master)
-[![Total Downloads](https://poser.pugx.org/watson/bootstrap-form/downloads.svg)](https://packagist.org/packages/watson/bootstrap-form)
-[![Latest Stable Version](https://poser.pugx.org/watson/bootstrap-form/v/stable.svg)](https://packagist.org/packages/watson/bootstrap-form)
-[![Latest Unstable Version](https://poser.pugx.org/watson/bootstrap-form/v/unstable.svg)](https://packagist.org/packages/watson/bootstrap-form)
-[![License](https://poser.pugx.org/watson/bootstrap-form/license.svg)](https://packagist.org/packages/watson/bootstrap-form)
+#[![Circle CI](https://circleci.com/gh/dwightwatson/bootstrap-form/tree/master.svg?style=shield)](https://circleci.com/gh/dwightwatson/bootstrap-form/tree/master)
+#[![Total Downloads](https://poser.pugx.org/watson/bootstrap-form/downloads.svg)](https://packagist.org/packages/watson/bootstrap-form)
+#![Latest Stable Version](https://poser.pugx.org/watson/bootstrap-form/v/stable.svg)](https://packagist.org/packages/watson/bootstrap-form)
+#[![Latest Unstable Version](https://poser.pugx.org/watson/bootstrap-form/v/unstable.svg)](https://packagist.org/packages/watson/bootstrap-form)
+#[![License](https://poser.pugx.org/watson/bootstrap-form/license.svg)](https://packagist.org/packages/watson/bootstrap-form)
 
 
-This is a package for simply creating Bootstrap 3 styled form groups in Laravel 5. It extends the normal form builder to provide you with horizontal form groups completed with labels, error messages and appropriate class usage.
+This is a fork of Dwight Watson's Bootstrap 3 Form Builder updated re-styled to use Bootstrap 4 classes, etc. in Laravel 5 applications.. It extends the normal form builder to provide you with horizontal form groups completed with labels, error messages and appropriate class usage.
 
 ## Introduction
 
@@ -52,7 +52,7 @@ Now, add these service providers to your `config/app.php` file (don't add the `H
 
 ```php
 Collective\Html\HtmlServiceProvider::class,
-Watson\BootstrapForm\BootstrapFormServiceProvider::class,
+RealRipley\BootstrapForm\BootstrapFormServiceProvider::class,
 ```
 
 And finally add these to the aliases array (note: Form and Html must be listed before BootstrapForm):
@@ -60,7 +60,7 @@ And finally add these to the aliases array (note: Form and Html must be listed b
 ```php
 'Form'     => Collective\Html\FormFacade::class,
 'HTML'     => Collective\Html\HtmlFacade::class,
-'BootForm' => Watson\BootstrapForm\Facades\BootstrapForm::class,
+'BootForm' => RealRipley\BootstrapForm\Facades\BootstrapForm::class,
 ```
 
 Feel free to use a different alias for BootstrapForm if you'd prefer something shorter.
