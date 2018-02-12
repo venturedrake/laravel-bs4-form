@@ -1,6 +1,6 @@
 {
-    "name": "realripley00/bootstrap-form",
-    "description": "Laravel 5 form wrappers for Bootstrap 3.",
+    "name": "realripley00/bootstrap-4-form",
+    "description": "Laravel 5 form wrappers for Bootstrap 4.",
     "keywords": ["laravel", "form", "bootstrap"],
     "license": "MIT",
     "authors": [
