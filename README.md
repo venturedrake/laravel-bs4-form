@@ -1,7 +1,7 @@
 BootstrapForm, forms for Laravel 5
 ==================================
 
-This is a fork of Dwight Watson's Bootstrap 3 Form Builder updated re-styled to use Bootstrap 4 classes, etc. in Laravel 5 applications. It extends the Laravel Collective form builder to provide you with horizontal form groups completed with labels, error messages and appropriate class usage.
+This is a fork of Dwight Watson's Bootstrap 3 Form Builder updated/re-styled to use Bootstrap 4 classes, etc. in Laravel 5 applications. It extends the Laravel Collective form builder to provide you with horizontal form groups completed with labels, error messages and appropriate class usage.
 
 ## Introduction
 
@@ -32,6 +32,8 @@ Of course, if there are errors for that field it will even populate them.
     </div>
 </div>
 ```
+
+If you're familiar with Dwight Watson's Bootstrap 3 form package, this is basically the same thing but for Bootstrap 4 forms.
 
 ## Installation
 
