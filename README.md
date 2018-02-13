@@ -3,6 +3,10 @@ BootstrapForm, forms for Laravel 5
 
 This is a fork of Dwight Watson's Bootstrap 3 Form Builder updated/re-styled to use Bootstrap 4 classes, etc. in Laravel 5 applications. It extends the Laravel Collective form builder to provide you with horizontal form groups completed with labels, error messages and appropriate class usage.
 
+[![Total Downloads](https://poser.pugx.org/realripley00/bootstrap-4-form/downloads)](https://packagist.org/packages/realripley00/bootstrap-4-form)
+[![Monthly Downloads](https://poser.pugx.org/realripley00/bootstrap-4-form/d/monthly)](https://packagist.org/packages/realripley00/bootstrap-4-form)
+[![License](https://poser.pugx.org/realripley00/bootstrap-4-form/license)](https://packagist.org/packages/realripley00/bootstrap-4-form)
+
 ## Introduction
 
 Simply use the `BootstrapForm` facade in the place of the `Form` facade when you want to generate a Bootstrap 4 form group. If you use the alias below, it would look like this: BootForm::open(), etc.
