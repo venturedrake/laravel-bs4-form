@@ -5,7 +5,7 @@ This is a fork of Dwight Watson's Bootstrap 3 Form Builder updated re-styled to 
 
 ## Introduction
 
-Simply use the `BootstrapForm` facade in the place of the `Form` facade when you want to generate a Bootstrap 3 form group.
+Simply use the `BootstrapForm` facade in the place of the `Form` facade when you want to generate a Bootstrap 4 form group. If you use the alias below, it would look like this: BootForm::open(), etc.
 
 ```php
 BootForm::text('username');
