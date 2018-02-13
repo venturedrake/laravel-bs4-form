@@ -687,7 +687,7 @@ class BootstrapForm
         return '<div class="input-group-addon"><span ' . $this->html->attributes($options) . '>'.$text.'</span></div>';
     }
 
-    /**
+   /**
      * Create an addon icon element.
      *
      * @param  string  $icon
@@ -698,9 +698,15 @@ class BootstrapForm
     {
         $prefix = array_get($options, 'prefix', $this->getIconPrefix());
 
-        return '<div class="input-group-addon"><span ' . $this->html->attributes($options) . '><i class="'.$prefix.$icon.'"></i></span></div>';
-    }
+        $attributes = array_merge(['class' => 'input-group-text'], $options);
 
+        if (isset($options['class'])) {
+            $attributes['class'] .= ' input-group-text';
+        }
+
+        return '<div class="input-group-prepend"><span ' . $this->html->attributes($attributes) . '><i class="'.$prefix.$icon.'"></i></span></div>';
+    }
+    
     /**
      * Create a hidden field.
      *
