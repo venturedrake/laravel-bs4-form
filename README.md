@@ -148,7 +148,7 @@ BootForm::password();
 
 ### Checkbox and radio button inputs
 
-Checkboxes and radio buttons are a little bit different and generate different markup.
+Checkboxes and radio buttons (TODO) are a little bit different and generate different markup.
 
 View the method signature for configuration options.
 
@@ -157,10 +157,10 @@ View the method signature for configuration options.
 BootForm::checkbox('interests[]', 'Laravel', 'laravel', true);
 ```
 
-Same goes for radio inputs.
+Radio buttons aren't working just yet... Should be updating soon.
 
 ```php
-BootForm::radio('gender', 'Male', 'male');
+//BootForm::radio('gender', 'Male', 'male');
 ```
 
 #### Multiple checkboxes and radio buttons

@@ -498,12 +498,12 @@ class BootstrapForm
 
         $value = is_null($value) ? $label : $value;
 
-        $labelOptions = $inline ? ['class' => 'radio-inline'] : [];
+        $labelOptions = $inline ? ['class' => 'custom-control custom-radio'] : [];
 
         $inputElement = $this->form->radio($name, $value, $checked, $options);
         $labelElement = '<label ' . $this->html->attributes($labelOptions) . '>' . $inputElement . $label . '</label>';
 
-        return $inline ? $labelElement : '<div class="radio">' . $labelElement . '</div>';
+        return $inline ? $labelElement : '<div class="custom-control custom-radio">' . $labelElement . '</div>';
     }
 
     /**
