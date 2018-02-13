@@ -1,7 +1,7 @@
 BootstrapForm, forms for Laravel 5
 ==================================
 
-This is a fork of Dwight Watson's Bootstrap 3 Form Builder updated re-styled to use Bootstrap 4 classes, etc. in Laravel 5 applications. It extends the Illuminate form builder to provide you with horizontal form groups completed with labels, error messages and appropriate class usage.
+This is a fork of Dwight Watson's Bootstrap 3 Form Builder updated re-styled to use Bootstrap 4 classes, etc. in Laravel 5 applications. It extends the Laravel Collective form builder to provide you with horizontal form groups completed with labels, error messages and appropriate class usage.
 
 ## Introduction
 
@@ -38,7 +38,7 @@ Of course, if there are errors for that field it will even populate them.
 First, require the package using Composer.
 
 ```shell
-composer require realripley00/bootstrap-form
+composer require realripley00/bootstrap-4-form
 ```
 
 Now, add these service providers to your `config/app.php` file (don't add the `HtmlServiceProvider` if you already have it).
@@ -63,6 +63,8 @@ There are a number of configuration options available for BootstrapForm. Run the
 ```shell
 php artisan vendor:publish
 ```
+
+Then just arrow down to this package.
 
 ### Horizontal form sizes
 
