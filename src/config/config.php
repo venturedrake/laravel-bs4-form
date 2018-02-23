@@ -52,5 +52,5 @@ return [
     |
     */
 
-    'icon_prefix' => 'fa fa-'
+    'icon_prefix' => ''
 ];
