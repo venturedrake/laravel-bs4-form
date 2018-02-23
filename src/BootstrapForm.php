@@ -972,7 +972,7 @@ class BootstrapForm
      */
     public function getIconPrefix()
     {
-        return $this->iconPrefix ?: $this->config->get('bootstrap_form.icon_prefix', 'fa fa-');
+        return $this->iconPrefix ?: $this->config->get('bootstrap_form.icon_prefix', ' ');
     }
 
     /**
