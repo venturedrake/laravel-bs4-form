@@ -813,7 +813,7 @@ class BootstrapForm
      */
     protected function getFormGroupOptions($name = null, array $options = [])
     {
-        $class = 'form-group row';
+        $class = 'form-group';
 
         if ($name) {
             $class .= ' ' . $this->getFieldErrorClass($name);
@@ -1031,7 +1031,7 @@ class BootstrapForm
      * @param  string  $format
      * @return mixed
      */
-    protected function getFieldError($field, $format = '<span class="help-block">:message</span>')
+    protected function getFieldError($field, $format = '<span class="invalid-feedback">:message</span>')
     {
         $field = $this->flattenFieldName($field);
 
@@ -1056,7 +1056,7 @@ class BootstrapForm
      * @param  string  $class
      * @return string
      */
-    protected function getFieldErrorClass($field, $class = 'has-error')
+    protected function getFieldErrorClass($field, $class = 'is-invalid')
     {
         return $this->getFieldError($field) ? $class : null;
     }
