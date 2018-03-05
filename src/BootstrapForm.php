@@ -14,7 +14,7 @@ use Illuminate\Support\Traits\Macroable;
 class BootstrapForm
 {
     use Macroable;
-    
+
     /**
      * Illuminate HtmlBuilder instance.
      *
@@ -427,11 +427,19 @@ class BootstrapForm
     {
         $label = $label === false ? null : $this->getLabelTitle($label, $name);
 
-        $labelOptions = $inline ? ['class' => 'checkbox-inline'] : [];
-        $inputElement = $this->form->checkbox($name, $value, $checked, $options);
-        $labelElement = '<label ' . $this->html->attributes($labelOptions) . '>' . $inputElement . $label . '</label>';
+        $options['class'] = 'form-check-input' . (isset($options['class']) ? ' ' . $options['class'] : '');
 
-        return $inline ? $labelElement : '<div class="checkbox">' . $labelElement . '</div>';
+        $options['id'] = isset($options['id']) ? $options['id'] : $name . $value;
+
+        $labelElement = $this->form->label($options['id'], $label, ['class' => 'form-check-label']);
+        $inputElement = $this->form->checkbox($name, $value, $checked, $options);
+
+        $classes = 'form-check';
+        if($inline) {
+            $classes .= ' form-check-inline';
+        }
+
+        return '<div class="' . $classes . '">' . $inputElement . $labelElement . '</div>';
     }
 
     /**
