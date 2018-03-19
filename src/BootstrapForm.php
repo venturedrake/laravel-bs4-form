@@ -821,13 +821,7 @@ class BootstrapForm
      */
     protected function getFormGroupOptions($name = null, array $options = [])
     {
-        $class = 'form-group';
-
-        if ($name) {
-            $class .= ' ' . $this->getFieldErrorClass($name);
-        }
-
-        return array_merge(['class' => $class], $options);
+        return array_merge(['class' => 'form-group'], $options);
     }
 
     /**
@@ -840,7 +834,11 @@ class BootstrapForm
      */
     protected function getFieldOptions(array $options = [], $name = null)
     {
-        $options['class'] = trim('form-control ' . $this->getFieldOptionsClass($options));
+        $options['class'] = trim(implode(' ', [
+                'form-control',
+                $this->getFieldOptionsClass($options),
+                $this->getFieldErrorClass($name),
+        ]));
 
         // If we've been provided the input name and the ID has not been set in the options,
         // we'll use the name as the ID to hook it up with the label.
