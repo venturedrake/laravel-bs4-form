@@ -814,6 +814,10 @@ class BootstrapForm
     protected function getFormGroupOptions($name = null, array $options = [])
     {
         $class = 'form-group';
+        
+        if( $this->isHorizontal() ) {
+            $class .= ' row';
+        }
 
         if ($name) {
             $class .= ' ' . $this->getFieldErrorClass($name);
@@ -863,7 +867,7 @@ class BootstrapForm
      */
     protected function getLabelOptions(array $options = [])
     {
-        $class = 'form-control-label';
+        $class = 'col-form-label';
         if ($this->isHorizontal()) {
             $class .= ' ' . $this->getLeftColumnClass();
         }
@@ -1031,7 +1035,7 @@ class BootstrapForm
      * @param  string  $format
      * @return mixed
      */
-    protected function getFieldError($field, $format = '<span class="invalid-feedback">:message</span>')
+    protected function getFieldError($field, $format = '<span class="form-control-feedback">:message</span>')
     {
         $field = $this->flattenFieldName($field);
 
@@ -1056,7 +1060,7 @@ class BootstrapForm
      * @param  string  $class
      * @return string
      */
-    protected function getFieldErrorClass($field, $class = 'is-invalid')
+    protected function getFieldErrorClass($field, $class = 'has-warning')
     {
         return $this->getFieldError($field) ? $class : null;
     }
