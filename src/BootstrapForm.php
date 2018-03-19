@@ -14,7 +14,7 @@ use Illuminate\Support\Traits\Macroable;
 class BootstrapForm
 {
     use Macroable;
-    
+
     /**
      * Illuminate HtmlBuilder instance.
      *
@@ -427,11 +427,19 @@ class BootstrapForm
     {
         $label = $label === false ? null : $this->getLabelTitle($label, $name);
 
-        $labelOptions = $inline ? ['class' => 'checkbox-inline'] : [];
-        $inputElement = $this->form->checkbox($name, $value, $checked, $options);
-        $labelElement = '<label ' . $this->html->attributes($labelOptions) . '>' . $inputElement . $label . '</label>';
+        $options['class'] = 'form-check-input' . (isset($options['class']) ? ' ' . $options['class'] : '');
 
-        return $inline ? $labelElement : '<div class="checkbox">' . $labelElement . '</div>';
+        $options['id'] = isset($options['id']) ? $options['id'] : $name . $value;
+
+        $labelElement = $this->form->label($options['id'], $label, ['class' => 'form-check-label']);
+        $inputElement = $this->form->checkbox($name, $value, $checked, $options);
+
+        $classes = 'form-check';
+        if($inline) {
+            $classes .= ' form-check-inline';
+        }
+
+        return '<div class="' . $classes . '">' . $inputElement . $labelElement . '</div>';
     }
 
     /**
@@ -698,7 +706,7 @@ class BootstrapForm
     {
         $prefix = array_get($options, 'prefix', $this->getIconPrefix());
 
-        return '<div class="input-group-addon"><span ' . $this->html->attributes($options) . '><i class="'.$prefix.$icon.'"></i></span></div>';
+        return '<div class="input-group-prepend"><span class="input-group-text"' . $this->html->attributes($options) . '><i class="'.$prefix.$icon.'"></i></span></div>';
     }
 
     /**
@@ -813,7 +821,7 @@ class BootstrapForm
      */
     protected function getFormGroupOptions($name = null, array $options = [])
     {
-        $class = 'form-group row';
+        $class = 'form-group';
 
         if ($name) {
             $class .= ' ' . $this->getFieldErrorClass($name);
@@ -972,7 +980,7 @@ class BootstrapForm
      */
     public function getIconPrefix()
     {
-        return $this->iconPrefix ?: $this->config->get('bootstrap_form.icon_prefix', 'fa fa-');
+        return $this->iconPrefix ?: $this->config->get('bootstrap_form.icon_prefix', ' ');
     }
 
     /**
@@ -1031,7 +1039,7 @@ class BootstrapForm
      * @param  string  $format
      * @return mixed
      */
-    protected function getFieldError($field, $format = '<span class="help-block">:message</span>')
+    protected function getFieldError($field, $format = '<span class="invalid-feedback">:message</span>')
     {
         $field = $this->flattenFieldName($field);
 
@@ -1056,7 +1064,7 @@ class BootstrapForm
      * @param  string  $class
      * @return string
      */
-    protected function getFieldErrorClass($field, $class = 'has-error')
+    protected function getFieldErrorClass($field, $class = 'is-invalid')
     {
         return $this->getFieldError($field) ? $class : null;
     }
