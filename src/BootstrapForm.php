@@ -14,7 +14,7 @@ use Illuminate\Support\Traits\Macroable;
 class BootstrapForm
 {
     use Macroable;
-    
+
     /**
      * Illuminate HtmlBuilder instance.
      *
@@ -427,11 +427,19 @@ class BootstrapForm
     {
         $label = $label === false ? null : $this->getLabelTitle($label, $name);
 
-        $labelOptions = $inline ? ['class' => 'checkbox-inline'] : [];
-        $inputElement = $this->form->checkbox($name, $value, $checked, $options);
-        $labelElement = '<label ' . $this->html->attributes($labelOptions) . '>' . $inputElement . $label . '</label>';
+        $options['class'] = 'form-check-input' . (isset($options['class']) ? ' ' . $options['class'] : '');
 
-        return $inline ? $labelElement : '<div class="checkbox">' . $labelElement . '</div>';
+        $options['id'] = isset($options['id']) ? $options['id'] : $name . $value;
+
+        $labelElement = $this->form->label($options['id'], $label, ['class' => 'form-check-label']);
+        $inputElement = $this->form->checkbox($name, $value, $checked, $options);
+
+        $classes = 'form-check';
+        if($inline) {
+            $classes .= ' form-check-inline';
+        }
+
+        return '<div class="' . $classes . '">' . $inputElement . $labelElement . '</div>';
     }
 
     /**
@@ -836,7 +844,11 @@ class BootstrapForm
      */
     protected function getFieldOptions(array $options = [], $name = null)
     {
-        $options['class'] = trim('form-control ' . $this->getFieldOptionsClass($options));
+        $options['class'] = trim(implode(' ', [
+                'form-control',
+                $this->getFieldOptionsClass($options),
+                $this->getFieldErrorClass($name),
+        ]));
 
         // If we've been provided the input name and the ID has not been set in the options,
         // we'll use the name as the ID to hook it up with the label.
