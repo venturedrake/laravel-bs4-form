@@ -259,4 +259,4 @@ Add prefix and/or suffix to any input - you can add text, icon and buttons.
 
 ### Dwight Watson's original Bootstrap 3 Form Builder
 
-This is a fork of this awesome package, tweaked a bit to use Bootstap 4.
+This is a fork of this awesome package, tweaked a bit to use Bootstrap 4.
