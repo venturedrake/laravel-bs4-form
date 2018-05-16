@@ -1047,7 +1047,7 @@ class BootstrapForm
      * @param  string  $format
      * @return mixed
      */
-    protected function getFieldError($field, $format = '<span class="form-control-feedback">:message</span>')
+    protected function getFieldError($field, $format = '<div class="invalid-feedback">:message</div>')
     {
         $field = $this->flattenFieldName($field);
 
@@ -1072,7 +1072,7 @@ class BootstrapForm
      * @param  string  $class
      * @return string
      */
-    protected function getFieldErrorClass($field, $class = 'has-warning')
+    protected function getFieldErrorClass($field, $class = 'is-invalid')
     {
         return $this->getFieldError($field) ? $class : null;
     }
