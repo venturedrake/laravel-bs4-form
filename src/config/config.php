@@ -1,6 +1,6 @@
 <?php
 
-use RealRipley\BootstrapForm\Type;
+use VentureDrake\BootstrapForm\Type;
 
 return [
 
@@ -48,9 +48,9 @@ return [
     | Icon prefix
     |--------------------------------------------------------------------------
     |
-    | Here you may specify the icon prefix, defaulted to Font Awesome.
+    | Here you may specify the icon prefix, for instance fa fa- to Font Awesome . ~4, etc.
     |
     */
 
-    'icon_prefix' => 'fa fa-'
+    'icon_prefix' => ''
 ];

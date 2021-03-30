@@ -1,6 +1,6 @@
 <?php
 
-use RealRipley\BootstrapForm\BootstrapForm;
+use VentureDrake\BootstrapForm\BootstrapForm;
 
 class BootstrapFormTest extends PHPUnit_Framework_TestCase
 {
@@ -192,7 +192,7 @@ class BootstrapFormTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals('foo.bar', $result);
     }
-    
+
     /** @test */
     public function in_allows_zero_in_field_name()
     {
