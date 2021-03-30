@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-namespace RealRipley\BootstrapForm;
+namespace VentureDrake\BootstrapForm;
 
 use Illuminate\Support\ServiceProvider;
 

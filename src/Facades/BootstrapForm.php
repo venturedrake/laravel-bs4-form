@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-namespace RealRipley\BootstrapForm\Facades;
+namespace VentureDrake\BootstrapForm\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace RealRipley\BootstrapForm;
+namespace VentureDrake\BootstrapForm;
 
 use Collective\Html\FormBuilder;
 use Collective\Html\HtmlBuilder;
